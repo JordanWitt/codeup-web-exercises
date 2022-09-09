@@ -44,5 +44,25 @@
 // let offerCanBeApplied = offerNotExpired && (isMoreThan2 || isPremiumMember);
 // alert(offerCanBeApplied);
 
+// Question 4
+
+// let googlePay = 400
+// let amazonPay = 380
+// let facebookPay =350
+// let googleTotal = googlePay * 6
+// let amazonTotal = amazonPay * 4
+// let facebookTotal = facebookPay * 10
+//
+// let totalPay = (googleTotal + amazonTotal + facebookTotal);
+// console.log(totalPay)
+
+let howManyHoursG = confirm("You have put in 6 hours at Google");
+let howManyHoursA = confirm("You have put in 4 hours at Amazon");
+let howManyHoursF = confirm("You have put in 10 hours at Facebook");
+let totalMoneyMade = confirm("You made a crap load of money, Congrats!");
+alert(howManyHoursG + howManyHoursA + howManyHoursF + totalMoneyMade);
+
+
+
 
 
