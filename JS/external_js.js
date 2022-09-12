@@ -6,7 +6,7 @@
 //
 // let favoriteColor= prompt("What is your favorite color?");
 //
-// alert("is a nasty color " + favoriteColor);
+// alert("is a nasty color " + favoriteColor.trim());
 //
 // let TLM = 3;
 // let BB =  5;
@@ -54,7 +54,8 @@
 // let amazonTotal = Number(prompt("How many hours did you work at Amazon?"));
 // let facebookTotal = Number(prompt("How many hours did you work at Facebook?"));
 // alert("This is your Total:" + ((google * googleTotal) + (amazon * amazonTotal) + (facebook * facebookTotal)));
-// REVISION OF QUESTION 4 TO PRODUCE PROMPTS******
+//  END OF REVISION OF QUESTION 4 TO PRODUCE PROMPTS******
+
 // let totalPay = (googleTotal + amazonTotal + facebookTotal);
 // console.log(totalPay)
 
