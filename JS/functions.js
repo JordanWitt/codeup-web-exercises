@@ -103,10 +103,7 @@ alert("The total amount after tip" + calculatedTip);
 //create function named applyDiscount
 //acccept price before discount is applied and percentage between 0,1
 //returm result of applying dicount to the original price
-let originalPrice = 100
-let discountPercent = .2;
-function applyDiscount() {
-    let applyDiscount = (originalPrice) * (discountPercent);
-    return applyDiscount;
+function applyDiscount(totalPrice, discountPrice)
+    if(discountPrice)
 }
 console.log(prompt("This is your total price" + applyDiscount));
