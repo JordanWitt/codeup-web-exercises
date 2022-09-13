@@ -41,7 +41,7 @@
 // let offerNotExpired = confirm("The offer is good for today");
 // let isMoreThan2 = confirm("Do you have more than 2 items?");
 // let isPremiumMember = confirm("Are you a premium member?");
-// let offerCanBeApplied = offerNotExpired && (isMoreThan2 || isPremiumMember);
+// let offerCanBeApplied = offerNotExpired && (isMoreThan2 || !isPremiumMember);
 // alert(offerCanBeApplied);
 
 // Question 4
