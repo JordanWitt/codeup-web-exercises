@@ -162,7 +162,7 @@ let enterNumber = confirm("Would you like to enter a number");
         if(isNaN(num)){
             alert("you're dumb")
         }
-        if(num % 2 == 0){
+        if(num % 2 === 0){
             alert("the number is even");
     }
         else {

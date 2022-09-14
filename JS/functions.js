@@ -14,9 +14,9 @@ console.log("This is a sanity check");
 // inside function -> eturn statement "hello" + name passed in?
 // pass into the function, the name we're ACTUALLY using?
 function sayHello(name){
-    return "Hello" + name + "!";
+    return 'Hello' + name
 }
-console.log(prompt(sayHello + "codeup"));
+console.log(prompt(sayHello(" from codeup." + " what is your name?")));
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -32,9 +32,10 @@ console.log(prompt(sayHello + "codeup"));
  * variable to the 'sayHello' function. You should see the same output in the
  * console.
  */
-let myName = "Jordan";
-function sayHello (myName)
+let myName = " Jordan";
+let helloMessage =sayHello(myName);
 
+console.log(alert(helloMessage + " now get out"));
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
 //var random = Math.floor((Math.random() * 3) + 1);
@@ -56,11 +57,11 @@ function sayHello (myName)
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-let isTwo();
-function isTwo {
-    return random;
+let num = 2
+function isTwo(num) {
+    return num === 2;
 }
-console.log(prompt(isTwo(1) + isTwo(2) + isTwo(3) +(random));
+console.log(prompt(isTwo));
 /**
  * TODO:
  * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -72,19 +73,21 @@ console.log(prompt(isTwo(1) + isTwo(2) + isTwo(3) +(random));
  * > calculateTip(0.25, 25.50) // returns 6.375
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
-function calculatedTip(x, y) {
-    let tip = x + y;
-    return tip;
+function calculatedTip(tipPercentage,  totalBill){
+    let amountTip = tipPercentage % totalBill
+    return amountTip
 }
-
+let total = prompt("What was your total");
+let percentageTip = prompt("Tip please?");
+alert(calculatedTip(percentageTip, total));
 /**
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-let y = prompt("Your bill total");
-let x = prompt("would you like to include tip");
+let yourBill = prompt("Your bill total");
+let addTip = prompt("would you like to include tip");
 alert("The total amount after tip" + calculatedTip);
 /**
  * TODO:
@@ -103,7 +106,9 @@ alert("The total amount after tip" + calculatedTip);
 //create function named applyDiscount
 //acccept price before discount is applied and percentage between 0,1
 //returm result of applying dicount to the original price
-function applyDiscount(totalPrice, discountPrice)
-    if(discountPrice)
+let originalPrice  = 100
+let discountPrice =.2
+function applyDiscount(){
+    return (originalPrice + discountPrice)
 }
-console.log(prompt("This is your total price" + applyDiscount));
+    alert(originalPrice +(applyDiscount()));
