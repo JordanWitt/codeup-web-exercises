@@ -33,8 +33,8 @@ function analyzedColor(colorName){
     }
 }
 console.log(analyzedColor("yellow"));
-console.log(analyzedColor("blue"));
-console.log(analyzedColor("cyan"));
+console.log(analyzedColor("bluw"));
+console.log(analyzedColor("yellow"));
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -52,8 +52,9 @@ console.log("so random these colors are" + analyzedColor(randomColor));
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-function analyzedColor(userInput){
-    switch (userInput){
+function analyzedColor(chooseColor){
+    let analyzedColor=(prompt("Pick a color"));
+    switch (chooseColor){
         case "red" :
             alert("red is bland");
             break;
@@ -64,7 +65,7 @@ function analyzedColor(userInput){
             alert("cyan is the most ehish");
             break;
         default:
-            return " I don't like " + userInput + " because it's a stankin color";
+            return " I don't like " + chooseColor + " because it's a stankin color";
     }
 }
 /**
@@ -77,8 +78,7 @@ function analyzedColor(userInput){
 /* ########################################################################## */
 // prompt the user to enter in a color
 // pass input to analyzed color function
-let userInput=(prompt("Pick a color"));
-console.log(alert(analyzedColor(userInput)));
+
 
 /**
  * TODO:
