@@ -21,11 +21,17 @@ console.log("sanity check");
 //         }
 // }
 //QUESTION 4**
-for (let i = 1; i < 10; i++){
-    let result = [];
-    for (let p = 1; p <= i; p++){
-        result.push(i);
-        // console.log(result);
-    }
-    console.log(result.join(""));
+// for (let i = 1; i < 10; i++){
+//     let result = [];
+//     for (let p = 1; p <= i; p++){
+//         result.push(i);
+//         // console.log(result);
+//     }
+//     console.log(result.join(""));
+// }
+//QUESTION 5**
+for (let i = 100; i >= 5; i--) {
+     if(i % 5 === 0) {
+          console.log(i);
+     }
 }
