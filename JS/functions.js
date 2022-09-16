@@ -57,9 +57,8 @@ console.log(alert(helloMessage + " now get out"));
  * different result everytime you refresh the page if you are using the random
  * number)
  */
-let num = 2
-function isTwo(num) {
-    return num === 2;
+function isTwo(x) {
+    return true == x;
 }
 console.log(prompt(isTwo));
 /**
