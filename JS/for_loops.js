@@ -9,13 +9,23 @@ console.log("sanity check");
 //     }
 // }
 // showMultiplicationTable(7);
-for (let i = 0; i <= 10; i++){
-    let randomNumber = (Math.floor(Math.random() * 201)) + 20;
-    let check = randomNumber % 2;
-    // console.log(randomNumber, check);
-    if(check === 0) {
-        console.log(randomNumber + " is even stevens");
-    }else{
-            console.log(randomNumber + " is oddball");
-        }
+//QUESTION 3***
+// for (let i = 0; i <= 10; i++){
+//     let randomNumber = (Math.floor(Math.random() * 201)) + 20;
+//     let check = randomNumber % 2;
+//     // console.log(randomNumber, check);
+//     if(check === 0) {
+//         console.log(randomNumber + " is even stevens");
+//     }else{
+//             console.log(randomNumber + " is oddball");
+//         }
+// }
+//QUESTION 4**
+for (let i = 1; i < 10; i++){
+    let result = [];
+    for (let p = 1; p <= i; p++){
+        result.push(i);
+        // console.log(result);
+    }
+    console.log(result.join(""));
 }
