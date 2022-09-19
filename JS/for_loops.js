@@ -30,8 +30,8 @@ console.log("sanity check");
 //     console.log(result.join(""));
 // }
 //QUESTION 5**
-for (let i = 100; i >= 5; i--) {
-     if(i % 5 === 0) {
-          console.log(i);
-     }
-}
+// for (let i = 100; i >= 5; i--) {
+//      if(i % 5 === 0) {
+//           console.log(i);
+//      }
+// }
