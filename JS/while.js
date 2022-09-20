@@ -6,14 +6,15 @@
 // }
 //Question Do While
 let allCones = Math.floor(Math.random() * 50) + 50;
+console.log(allCones);
+While(true)
+    for(let = i = 50; i <= 100; i++){
+        if(i<100);
+        console.log("How many cone would you like?" + i);
 
-if{// want x amount of cones
-    else // only have x amount left
-        console.log
-    else if {
-        console.log//
-    }
 }
+
+
 
 
 
