@@ -6,16 +6,7 @@
 // }
 //Question Do While
 let allCones = Math.floor(Math.random() * 50) + 50;
-console.log(allCones);
-While(true)
-    for(let = i = 50; i <= 100; i++){
-        if(i<100);
-        console.log("How many cone would you like?" + i);
-
-}
-
-
-
-
-
-// Math.floor(Math.random() * 5) + 1;
+do
+    let canBuy = Math.floor(Math.random() * 5) + 1
+    if (canBuy < 0) ;
+    console.log("Cannot sell you 6 cones I only have 3" + allCones)
