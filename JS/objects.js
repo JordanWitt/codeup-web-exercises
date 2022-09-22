@@ -12,8 +12,8 @@
 //      *  > console.log(person.lastName) // "Sanchez"
 //      */
 //     let person = {
-//         firstName = "Jordan"
-//         lastName = "Witt"
+//         firstName: "Jordan",
+//         lastName:\ "Witt"
 //     }
 //     /**
 //      * TODO:
@@ -59,6 +59,7 @@
 //     }
 // })
 
+})
 // HEB if offer is > 200 answer is true(12 percent discount applied)
 
     /** TODO:
@@ -110,23 +111,23 @@
             }
         },
     ]
-console.log(books[1].title);
-console.log(books[4].title);
-console.log(books[3].author.firstName);
-console.log(books[0].author.lastName);
-
-    //     {harryPotter: "Deathly Hallow"},
-    //     {harryPotter: "Order of the Phoenix"},
-    //     {harryPotter: "Chamber of Secrets"},
-    //     {harryPotter: "Sorcerers Stone"},
-    //     {harryPotter: "Half Blood Prince}"
-    //     author: {
-    //             firstName: "J.K",
-    //             lastName: "Rowling"
-    //         }
-    // ];
-    // console.log(books.harryPotter);
-    /**
+// console.log(books[1].title);
+// console.log(books[4].title);
+// console.log(books[3].author.firstName);
+// console.log(books[0].author.lastName);
+//
+//     //     {harryPotter: "Deathly Hallow"},
+//     //     {harryPotter: "Order of the Phoenix"},
+//     //     {harryPotter: "Chamber of Secrets"},
+//     //     {harryPotter: "Sorcerers Stone"},
+//     //     {harryPotter: "Half Blood Prince}"
+//     //     author: {
+//     //             firstName: "J.K",
+//     //             lastName: "Rowling"
+//     //         }
+//     // ];
+//     // console.log(books.harryPotter);
+//     /**
      * TODO:
      * Loop through the books array and output the following information about
      * each book:
@@ -164,5 +165,21 @@ books.forEach(function(book, index)
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+function createBook(bookTitle, author){
+    let authorName = author.split(" ")
 
-})();
+        return {title: bookTitle,
+        author: {
+            firstName: authorName[0],
+            lastName: authorName[1]
+        }}
+    }
+
+
+
+    // function showBookInfo(book){
+//     let niceString = books.title + "\n" + books.author.firstName + " " + books.author.lastName
+//         return niceString;
+//     }
+//     console.log(showBookInfo(books)[1]);
+// })();
