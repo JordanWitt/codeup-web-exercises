@@ -9,10 +9,12 @@
             // TODO: complete this method
             // hint: area = pi * radius^2
 
-            return; // TODO: return the proper value
+            return math.PI(math.pow(this.radius, 2)); // TODO: return the proper value
         },
 
         logInfo: function (doRounding) {
+            if ( r === true)
+                return
             // TODO: complete this method.
 
             // If doRounding is true, round the result to the nearest integer.
@@ -36,4 +38,6 @@
     circle.logInfo(false);
     console.log("Circle information rounded to the nearest whole number");
     circle.logInfo(true);
+
 })();
+
