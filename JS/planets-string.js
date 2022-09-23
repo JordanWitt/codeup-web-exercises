@@ -1,18 +1,18 @@
 (function(){
     "use strict";
 
-    // var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
-    // var planetsArray;
-    //
-    // /**
-    //  * TODO:
-    //  * Convert planetsString to an array, and save it in a variable named
-    //  * planetsArray.
-    //  * console.log planetsArray to check your work
-    //  */
-    // console.log(planetsString);
-    // planetsArray = planetsString.split('|');
-    // console.log(planetsArray);
+    var planetsString = "Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune";
+    var planetsArray;
+
+    /**
+     * TODO:
+     * Convert planetsString to an array, and save it in a variable named
+     * planetsArray.
+     * console.log planetsArray to check your work
+     */
+    console.log(planetsString);
+    planetsArray = planetsString.split('|');
+    console.log(planetsArray);
 
     /**
      * TODO:
@@ -26,6 +26,6 @@
      */
     let planetsStringBreak = planetsArray.join("<br>");
     console.log(planetsStringBreak);
-    planetsList = let unorderedPlanetsString =("<ul> + <li>" + planetsArray.join("</li><li>") + "</li> + </ul>)"
-    console.log(planetsList);
+    // planetsList = let unorderedPlanetsString =("<ul> + <li>" + planetsArray.join("</li><li>") + "</li> + </ul>)"
+    // console.log(planetsList);
 })();
