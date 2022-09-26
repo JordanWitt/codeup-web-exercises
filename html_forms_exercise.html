@@ -5,16 +5,24 @@
     <title>Title</title>
 </head>
 <body>
-<form method ="get" action ="https://hookb.in/K3B8XlEDrEIPnWdP30Wm">
+<form method ="POST"
+      action ="https://hookb.in/K3B8XlEDrEIPnWdP30Wm">
       <label>
           <input name="email" id="email" type="text"
                  placeholder="email">
-                 </label>
+      </label>
     <label>
         <input name="password" id="password" type="text"
         placeholder="password">
       </label>
-  <button type="submit"> password</button>
+        <label for="category">
+            <select for="category" name="category" id="category">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+                <option value="sithlord">Sith Lord</option>
+            </select>
+    </label>
+  <button type="submit"> Submit</button>
 </form>
 </body>
 </html>
