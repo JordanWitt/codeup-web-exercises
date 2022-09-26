@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us</title>
+</head>
+<body>
+<form method="POST" action="https://request-inspector.glitch.me/">
+  <label>
+    <input name="email" id="email" type="text"
+           placeholder="email">
+  </label>
+  <label>
+    <input name="password" id="password" type="text"
+           placeholder="password">
+  </label>
+  <label for="category">
+    <select for="category" name="category" id="category">
+      <option value="user">User</option>
+      <option value="admin">Admin</option>
+      <option value="sithlord">Sith Lord</option>
+    </select>
+  </label>
+  <button type="submit"> Submit</button>
+  <br>
+
+  <!-- Bio section-->
+
+  <h4>Bio:</h4>
+  <textarea name="About Me"></textarea>
+  <br>
+
+  <!-- creating radio buttons for how did you hear about us?-->
+
+  <fieldset>
+    <legend>How did you hear about us:</legend>
+
+    <div>
+      <input type="radio" id="billboard" name="hearabout" value="billboard"
+             checked>
+      <label for="billboard">Billboard</label>
+    </div>
+
+    <div>
+      <input type="radio" id="radioadvertisement" name="hearabout" value="radioadvertisement">
+      <label for="radioadvertisement">Radio Advertisement</label>
+    </div>
+
+    <div>
+      <input type="radio" id="internetadvertisement" name="hearabout" value="internetadvertisement">
+      <label for="internetadvertisement">Internet Advertisement</label>
+    </div>
+    <div>
+      <input type="radio" id="other" name="hearabout" value="other">
+      <label for="other">Other</label>
+    </div>
+  </fieldset>
+  </label>
+
+  <!--creating drop down for web pages-->
+  <h4>What web browser are you using?</h4>
+  <select name="whichbrowser">
+    <option value="chrome">Google Chrome</option>
+    <option value="explorer">Internet Explorer</option>
+    <option value="safari">Safari</option>
+    <option value="firefox">Mozilla Firefox</option>
+  </select>
+  <br> <br>
+  <button type="submit"> Submit Form</button>
+</form>
+</body>
+</html>
