@@ -8,15 +8,14 @@
         getArea: function (radius) {
             // TODO: complete this method
             // hint: area = pi * radius^
-            return math.PI(Math.pow(this.radius, 2)); // TODO: return the proper value
+            return Math.PI(Math.pow(this.radius, 2)); // TODO: return the proper value
 
         },
         logInfo: function (doRounding) {
-            if (doRounding) {
-                console.log(doRounding);
-                return Math.round(doRounding);
+            if (this.radius) {
+                return Math.round(this.radius);
             } else {
-                return doRounding;
+                return this.radius;
             }
         }
             // TODO: complete this method.
