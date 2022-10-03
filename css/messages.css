@@ -7,8 +7,6 @@ body, html {
 }
 .message-info{
     color: rebeccapurple;
-}
-#colorpurple {
     margin: 10px;
     height: 20px;
     width: 80%;
@@ -16,10 +14,9 @@ body, html {
     padding: 5px 10px 5px 20px;
     border-radius: 8px;
 }
+
 .message-success {
     color: green;
-}
-#colorgreen {
     margin: 10px;
     height: 20px;
     width: 80%;
@@ -29,8 +26,6 @@ body, html {
 }
 .message-warning{
     color: darkgoldenrod;
-}
-#coloryellow {
     margin: 10px;
     height: 20px;
     width: 80%;
@@ -40,8 +35,6 @@ body, html {
 }
 .message-error{
     color: darkred;
-}
-#colorred{
     margin: 10px;
     height: 20px;
     width: 80%;
