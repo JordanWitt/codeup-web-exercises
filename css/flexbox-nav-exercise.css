@@ -1,0 +1,51 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-sizing: border-box;
+    background: grey;
+}
+.nav-links{
+    display: flex;
+    justify-content: flex-start;
+    width: 30%;
+}
+.nav-links a{
+    font-family: Helvetica;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+.logo-name{
+    display: flex;
+    justify-content: center;
+    width: 40%;
+}
+.logo-name a{
+    font-family: Helvetica;
+    font-weight: bold;
+    color: black;
+    font-size: 3em;
+    text-decoration: none;
+    padding: .2em;
+}
+.contact-section{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+}
+.contact-section a{
+    font-family: Helvetica;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+a{
+    display: inline-block;
+}
+a:hover{
+    background-color: blue;
+}
