@@ -1,0 +1,117 @@
+@media screen and (min-width: 576px) {
+    body {
+        background: white;
+        margin: 20px;
+    }
+    a{
+        display: flex;
+        justify-content: center;
+    }
+
+    .alert-info a {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        padding: 20px;
+        color: black;
+        background: aqua;
+        text-decoration: none;
+        font-size: 30px;
+        font-family: Helvetica;
+    }
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        font-family: "Helvetica";
+        font-size: 100px;
+        margin: 0;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        list-style: none;
+        width: 100%;
+        margin-left: -35px;
+    }
+
+    li {
+        display: flex;
+        justify-content: center;
+        background: grey;
+        margin: 5px;
+        padding: 30px;
+        font-family: Helvetica;
+        font-size: 40px;
+    }
+
+    img {
+        width: 100%;
+        margin: 10px;
+    }
+
+    .header-img {
+        display: flex;
+        justify-content: center;
+    }
+    #main{
+        margin-bottom: 20px;
+    }
+    .sub-section{
+        margin-bottom: 20px;
+    }
+    footer{
+        margin: 10px;
+    }
+}
+@media screen and (min-width:992px) {
+    .alert-info a {
+        display: none;
+    }
+
+    h1 {
+        font-family: Helvetica;
+        font-size: 50px;
+        float: left;
+    }
+    nav{
+         display: flex;
+         float: right;
+     }
+    ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+    }
+    li {
+        background: none;
+        margin: 5px;
+        padding: 10px;
+        width: 40px;
+        font-size: 20px;
+    }
+    .header-img{
+        width: 100%;
+    }
+    #main{
+        float: left;
+        width: 50%;
+    }
+    .sub-section{
+        float: right;
+        width: 40%;
+    }
+    footer{
+        display: inline-block;
+    }
+}
+/* MEDIA QUERIES/
+ */
+
