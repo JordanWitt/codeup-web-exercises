@@ -1,32 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tooltip with Image</title>
+    <title>Jordan's Web Page</title>
     <meta charset="UTF-8">
-    <style type="text/css">
-        .tooltip {
-            text-decoration:none;
-            position:relative;
-        }
-        .tooltip span {
-            display:none;
-        }
-        .tooltip span img {
-            float:left;
-        }
-        .tooltip:hover span {
-            display:block;
-            position:absolute;
-            overflow:hidden;
-        }
-    </style>
+    <link rel="stylesheet" href="css/Jordans-Website.css">
 </head>
 <body>
-<a class="tooltip" href="https://en.wikipedia.org/wiki/Giant_panda">
-    <p style="font-family:Helvetica Neue"> GIANT PANDAS </p>
-    <span>
-      <img alt="" src="images/pexels-mq-huang-7619845.jpg" height="400px">
-    </span>
-</a>
+<nav>
+    <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">NEWS</a></li>
+        <li><a href="#">CONTACT</a></li>
+        <li><a href="#">ABOUT</a></li>
+    </ul>
+</nav>
+<article class="card">
+    <section>
+        <img src="images/profile.png" alt="profile-image" >
+    </section>
+    <section class="text-section">
+        <h2>Ron Swanson</h2>
+        <h3>Director</h3>
+        <hr>
+    </section>
+    <section class="icons">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+    </section>
+</article>
+<footer>
+    <div class="container">
+        <section class="top-footer">
+            <div class="logo-div">
+                <h1><a href="#">Logo</a></h1>
+                <a href="#">Sologan Company</a>
+            </div>
+            <ul>
+                <li><a href="#">Weebly Themes</a></li>
+                <li><a href="#">Pre-Sale FAQS</a></li>
+                <li><a href="#">Submit a Ticket</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Theme Tweak</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Showcase</a></li>
+                <li><a href="#">Widgetkit</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Affiliates</a></li>
+                <li><a href="#">Resources</a></li>
+            </ul>
+        </section>
+        <div class="line"></div>
+        <section class="bottom-footer">
+            <div class="social-media-links">
+                <a href="#">
+                    <span class="icon-wrapper">
+                        <i class="fab fa-facebook-f"></i>
+                    </span>
+                </a>
+                <a href="#">
+                    <span class="icon-wrapper">
+                        <i class="fab fa-twitter"></i>
+                    </span>
+                </a>
+                <a href="#">
+                    <span class="icon-wrapper">
+                        <i class="fas fa-rss"></i>
+                    </span>
+                </a>
+                <a href="#">
+                    <span class="icon-wrapper">
+                        <i class="fab fa-google-plus-g"></i>
+                    </span>
+                </a>
+                <a href="#">
+                    <span class="icon-wrapper">
+                        <i class="fab fa-linkedin-in"></i>
+                    </span>
+                </a>
+            </div>
+            <h5>@Copyright. All rights reserved.</h5>
+        </section>
+    </div>
+</footer>
 </body>
 </html>
