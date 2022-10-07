@@ -1,0 +1,15 @@
+.jumbotron {
+    display: flex;
+    align-items: center;
+    height: 346px;
+    background-image: url("/images/pizza.png");
+    background-size: cover;
+}
+.jumbotron>h1{
+    width: 100%;
+    text-align: center;
+}
+.card header{
+    display: flex;
+    margin: auto;
+}
