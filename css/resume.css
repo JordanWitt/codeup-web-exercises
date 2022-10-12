@@ -1,3 +1,9 @@
+.bgcolor{
+    background: black;
+}
+.hrcolor{
+    border-top: 10px solid orangered;
+}
 h1{
     font-family: "Press Start 2P";
     color: orangered;
@@ -15,10 +21,13 @@ h4{
 }
 h5{
     font-family: "Press Start 2P";
+    color: beige;
 }
 p{
     font-family: "Press Start 2P";
+    color: beige;
 }
 ul{
     font-family: "Press Start 2P";
+    color: beige;
 }
