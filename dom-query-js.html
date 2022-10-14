@@ -74,8 +74,11 @@ function changeColor() {
 function changeText(){
             btn1.innerHTML ="Ah, I've Changed"
 }
+function makeChange(){
+            mainHeader.innerText = "Ah I've changed again!"
+}
         let btn1 = document.getElementById("btn1");
-        btn1.addEventListener("click", changeText);
+        btn1.addEventListener("click", makeChange);
 
         let btn3 = document.getElementById("btn3");
         btn3.addEventListener("click", changeColor);
