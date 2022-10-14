@@ -58,7 +58,7 @@
             }
         }
     }
-listColor();
+
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
@@ -68,26 +68,25 @@ listColor();
             subParagraphs[0].innerText = "Mission Accomplished!";
         }
 
-function changeColor() {
-    btn3.style.color = "green"
-}
-function changeText(){
-            btn1.innerHTML ="Ah, I've Changed"
-}
-function makeChange(){
-            mainHeader.innerText = "Ah I've changed again!"
-}
+
         let btn1 = document.getElementById("btn1");
-        btn1.addEventListener("click", makeChange);
-
         let btn3 = document.getElementById("btn3");
-        btn3.addEventListener("click", changeColor);
-
         let btn4 = document.getElementById("btn4");
+        let btn2 = document.getElementById("btn2");
+
+
+        btn1.addEventListener("click", makeChange);
+        btn3.addEventListener("click", changeColor);
         btn4.addEventListener("click", missionAccomplished);
 
+
+        function changeColor() {
+            listColor();
+        }
+        function makeChange(){
+            mainHeader.innerText = "Ah I've changed again!"
+        }
         let remover = function (event) {
-            let btn2 = document.getElementById("btn2");
             btn2.addEventListener("click", remover);
         }
 
