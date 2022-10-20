@@ -3,7 +3,6 @@ let secretCode = [38,38,40,40,37,39,37,39,66,65];//the key code that matches the
 let userInput = [];//empty array the user inputs
 let soundAlert = new Audio('images/smb3_level_clear.wav');//sound played when code is entered
 
-
 $(document).keyup(function(event){
     console.log(event.keyCode);//logs which key is pressed by using key, keyCode(being used) or which
     let konamiCode = event.keyCode
@@ -17,8 +16,7 @@ $(document).keyup(function(event){
                 });
             });
         }
-
-        blink('.blink');
+        blink();
     }
 });
 

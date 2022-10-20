@@ -1,0 +1,39 @@
+body{
+    background-image: url('/images/403957-space-galaxy-stars-Moon-nebula-blue-748x421.jpeg');
+    background-size: cover;
+}
+h1, h3{
+    font-family: 'Libre Baskerville', serif;
+    font-weight: bold;
+}
+h1{
+    font-size: 80px;
+}
+.Attrox, .Nocturne, .Kha, .Kai{
+    background-color: white;
+    opacity: 20%;
+    padding: 60px;
+    margin-bottom: 20px;
+}
+p{
+    font-size: 14px;
+    font-family: 'Libre Baskerville', serif;
+}
+dt{
+    font-size: 12px;
+    font-family: 'Libre Baskerville', serif;
+}
+dd{
+    font-size: 12px;
+    font-family: 'Libre Baskerville', serif;
+}
+.kai{
+    background-image: url("images/Kaisa_0.jpeg");
+}
+.invisible{
+    visibility: hidden;
+}
+.highlight{
+    visibility: hidden;
+    background-color: #de5fde;
+}
