@@ -9,10 +9,6 @@ $(document).keyup(function(event){
     if(userInput.toString().length === secretCode.toString().length){//checking if the user input matches the length of the secret code
         let soundAlert = new Audio('images/smb3_level_clear.wav');
         soundAlert.play();
-        let starsFalling = new Image('/images/tTuNWl.gif')
-        starsFalling.loading();
-
-        // checkCode()//function checking if the string matches
     }
 });
 
