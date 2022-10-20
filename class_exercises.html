@@ -1,82 +1,23 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <title>Flexbox Basics Examples</title>-->
-<!--    <style>-->
-<!--        *-->
-<!--        .flex-container {-->
-<!--            display: flex;-->
-<!--            align-items: baseline;-->
-<!--            border: 5px solid goldenrod;-->
-<!--            height: 100vh;-->
-<!--        }-->
-<!--        .box1 {-->
-<!--            font-size: 15px;-->
-<!--        }-->
-<!--        .box2 {-->
-<!--            font-size: 30px;-->
-<!--        }-->
-<!--        .box3 {-->
-<!--            font-size: 45px;-->
-<!--        }-->
-<!--        .box4 {-->
-<!--            font-size: 60px;-->
-<!--        }-->
-<!--        .box5 {-->
-<!--            font-size: 75px;-->
-<!--        }-->
-
-<!--    </style>-->
-<!--</head>-->
-<!--<body>-->
-
-<!--<div class="flex-container">-->
-<!--    <div class="flex-item">Item 1</div>-->
-<!--    <div class="flex-item">Item 2</div>-->
-<!--    <div class="flex-item">Item 3</div>-->
-<!--</div>-->
-
-<!--<div class="flex-container-baseline">-->
-<!--    <div class="flex-item" box1"> Flex Item 1</div>-->
-<!--    <div class="flex-item" box1"> Flex Item 1</div>-->
-<!--    <div class="flex-item" box1"> Flex Item 1</div>-->
-<!--    <div class="flex-item" box1"> Flex Item 1</div>-->
-<!--    <div class="flex-item" box1"> Flex Item 1</div>-->
-<!--    <div class="flex-item" box1"> Flex Item 1</div>-->
-<!--</div>-->
-
-<!--</body>-->
-<!--</html>-->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title></title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <title>Title</title>
 </head>
 <body>
-<button id="btn1">Click Me!</button>
-<button id="btn2">Remove Event Listener</button>
-<script>
-    'use strict';
 
-    var listener = function (event) {
-        alert('You clicked the button!');
-    }
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur culpa cupiditate hic inventore odio quidem quod! Ad autem blanditiis dicta dignissimos excepturi illum nemo, officia quaerat quo reprehenderit, veniam.</p>
 
-    // add event listener to btn1
-    var btn1 = document.getElementById('btn1');
-    btn1.addEventListener('click', listener);
 
-    var remover = function (event) {
-        // remove event listener from btn1
-        btn1.removeEventListener('click', listener);
-        console.log('Event listener removed.');
-    }
+<!-- BOOTSTRAP -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    // add event listener to btn2
-    var btn2 = document.getElementById('btn2');
-    btn2.addEventListener('click', remover);
+<!-- JQUERY IMPORT HERE:-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
-</script>
+<!-- MY JAVASCRIPT FILE-->
+<script src="js/class_exercises.js"></script>
 </body>
 </html>

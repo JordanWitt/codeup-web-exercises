@@ -133,3 +133,8 @@
 // let deleteCount = 0;
 // fruits.splice(start, deleteCount, 'strawberry');
 // console.log(fruits);
+
+$('p').dblclick
+(function(e) {
+    $(this).css('font-size', '20px');
+});

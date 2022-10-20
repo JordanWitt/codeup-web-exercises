@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+}
+#background{
+    background-image: url('/images/3739446.webp');
+    width: 100%;
+    height: 1400px;
+    z-index: -1;
+    animation: back 20s infinite;
+    animation-timing-function: linear; }
+
+@keyframes back {
+    100%{
+        background-position: -3067px 0;
+    }
+}
+
+h1 {
+    color: lightpink;
+    font-family: "Press Start 2P";
+    padding: 100px;
+    text-align: center;
+}
+#sprite{
+    position: absolute;
+    top: 1050px;
+    left: 300px;
+    width: 160px;
+    height: 225px;
+    background-image: url('/images/mario-walking.gif');
+    mix-blend-mode: multiply;
+    z-index: 1;
+}
