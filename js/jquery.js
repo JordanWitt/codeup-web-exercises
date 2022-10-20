@@ -1,16 +1,30 @@
 "use strict";
 let secretCode = [38,38,40,40,37,39,37,39,66,65];//the key code that matches the keys the user hits
 let userInput = [];//empty array the user inputs
+let soundAlert = new Audio('images/smb3_level_clear.wav');//sound played when code is entered
+
 
 $(document).keyup(function(event){
     console.log(event.keyCode);//logs which key is pressed by using key, keyCode(being used) or which
     let konamiCode = event.keyCode
     userInput.push(konamiCode)//pushes the keycode in the console so we can see it. (returns the numeric value of key)
     if(userInput.toString().length === secretCode.toString().length){//checking if the user input matches the length of the secret code
-        let soundAlert = new Audio('images/smb3_level_clear.wav');
         soundAlert.play();
+        function blink(selector){
+            $('#yeehaw').fadeOut('fast', function(){
+                $(this).fadeIn('fast', function(){
+                    blink(this);
+                });
+            });
+        }
+
+        blink('.blink');
     }
 });
+
+
+
+
 
 
 // TRIAL AND ERROR FUNCTIONS BELOW
