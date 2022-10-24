@@ -5,26 +5,18 @@ $(document).ready(function() {
         $('dd').toggleClass('invisible');
     });
 });
-$(document).ready(function() {
-    $('.learn').click(function(event) {
-        event.preventDefault();
-        $('dt').toggleClass('highlight');
-    });
-});
-$(document).ready(function() {
-    $('.learn').click(function(event) {
-        event.preventDefault();
-        $('dt').toggleClass('highlight');
-    });
-});
 $( "h3" ).click(function() {
     $( "ul" ).each(function() {
         $( this ).children().last().toggleClass( "example2" );
     });
 });
-$( "button" ).click(function() {
+$( ".clickme1" ).click(function() {
     $( "ul" ).each(function() {
         $( this ).children().toggleClass( "example" );
     });
 });
-
+$( ".learn" ).click(function() {
+    $( "ul" ).each(function() {
+        $( this ).parent().toggleClass( "example3" );
+    });
+});

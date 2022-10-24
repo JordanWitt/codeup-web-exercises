@@ -35,9 +35,6 @@ dd{
 .invisible{
     visibility: hidden;
 }
-.highlight{
-    background-color: #de5fde;
-}
 ul{
     list-style: none;
     text-align: start;
@@ -49,9 +46,7 @@ ul{
     color: seagreen;
 }
 button{
-    background-color:black;
     color: lightskyblue;
-    opacity: 50%;
 }
 .example2{
     background-color: lightcoral;
@@ -59,6 +54,13 @@ button{
     font-size: 16px;
     color: lightgreen;
 }
-example3{
+.example3{
     color: darkkhaki;
+}
+img{
+    height: 150px;
+    width: 200px;
+    border-style: solid;
+    border-color: lightpink;
+    border-width: thick;
 }
