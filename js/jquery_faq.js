@@ -1,13 +1,13 @@
 "use strict";
-$('document').ready(function() {
+$(document).ready(function() {
     $('.learnMore').click(function(event) {
         event.preventDefault();
-        $('.invisible').toggleClass('invisible');
+        $('dd').toggleClass('invisible');
     });
 });
-$('document').ready(function() {
+$(document).ready(function() {
     $('.learn').click(function(event) {
         event.preventDefault();
-        $('.highlight').toggleClass('highlight');
+        $('dt').toggleClass('highlight');
     });
 });
