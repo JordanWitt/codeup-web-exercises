@@ -48,6 +48,25 @@ let fullName = function (){
     return fullName
 }
 console.log(fullName());
+console.log(person);
+console.log(fullName());
+
+//arrays
+let selectedColors = ['red', 'blue']; //square brackets empty array;
+selectedColors[2] = 'green';
+selectedColors[3] = 1;
+console.log(selectedColors.length);//returns how many items/elemtents in the array (4)
+
+//functions
+function greet(name, lastName) {  //the parameters
+    console.log('Hello ' + name + ' ' + lastName);
+}
+greet('Jordan', 'Witt');// arugument supplied to that parameter
+// calc funtions
+function square(number){
+    return number * number;
+}
+console.log(square(2));
 
 
 
