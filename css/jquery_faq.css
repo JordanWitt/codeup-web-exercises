@@ -22,10 +22,12 @@ p{
 dt{
     font-size: 12px;
     font-family: 'Libre Baskerville', serif;
+    text-align: center;
 }
 dd{
     font-size: 12px;
     font-family: 'Libre Baskerville', serif;
+    text-align: center;
 }
 .kai{
     background-image: url("images/Kaisa_0.jpeg");
@@ -35,4 +37,28 @@ dd{
 }
 .highlight{
     background-color: #de5fde;
+}
+ul{
+    list-style: none;
+    text-align: start;
+}
+.example{
+    background-color: lightskyblue;
+    font-style: italic;
+    font-size: 16px;
+    color: seagreen;
+}
+button{
+    background-color:black;
+    color: lightskyblue;
+    opacity: 50%;
+}
+.example2{
+    background-color: lightcoral;
+    font-weight: bold;
+    font-size: 16px;
+    color: lightgreen;
+}
+example3{
+    color: darkkhaki;
 }
