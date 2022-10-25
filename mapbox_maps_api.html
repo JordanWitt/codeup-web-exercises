@@ -1,10 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Map Marker Example</title>
+    <!-- Mapbox CSS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 700px;
+        }
+
+    </style>
 </head>
 <body>
-$END$
+
+<h1>My First Mapbox Map!</h1>
+
+<select class="form-select" id="zoomLvl" aria-label="Default select example">
+    <option selected>Zoom Levels</option>
+    <option value="5">Zoom Out</option>
+    <option value="15">Halfway</option>
+    <option value="20">Zoom In</option>
+</select>
+<!-- The HTML element that serves as the Mapbox container -->
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+
+<!-- Custom JS -->
+<script>
+
+    const accessToken = 'pk.eyJ1Ijoid2l0dC1qb3JkYW4iLCJhIjoiY2w5bjg2NmYzMDMxMzNubXoya3NkdmFmNCJ9.XeAO7FLOUKOLrnRxYiQvgw';
+
+    mapboxgl.accessToken = accessToken;
+
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        zoom: 10,
+        center: [-89.07630, 39.38780]
+    });
+
+    let goodEats = [{
+        name: "Mucks Place",
+        long: -89.08288,
+        lat: 39.38965,
+        address: "12 E 2nd St, Pana, IL 62557",
+        info: "<em> Musky Muck Review:</em> Cool bar, but the tenderloin was bad, and we were up-charged for tomato and pickle toppings."
+    },{
+        name: "Whiskey Bill's Saloon and Liquor Emporium, LLC",
+        long: -89.07469,
+        lat: 39.39091,
+        address: "121 E Olive St, Pana, IL 62557",
+        info: "<em> Whiskey Woes Review:</em>  I won't bother trying this place again."
+    },{
+        name: "Curly Girls Cafe & Catering restaurant",
+        long: -89.06675,
+        lat: 39.39094,
+        address: "203 N Park Ave, Pana, IL 62557",
+        info: "<em> A curly review:</em>  Hopefully they will offer more lunch items in the future. Limited menu items to choose from. "
+    }];
+  goodEats.forEach(function (goodEat){
+      let marker = new mapboxgl.Marker().setLngLat([goodEat.long, goodEat.lat]).addTo(map);
+      let popup = new mapboxgl.Popup().setHTML("<p>" + goodEat.name + "<br>" + goodEat.info + "</p>");
+      marker.setPopup(popup);
+  });
+
+    let run = document.getElementById("zoomLvl");
+    run.addEventListener('change', function (){
+        let zoomValue = document.getElementById("zoomLvl").value;
+        map.setZoom(zoomValue);
+    });
+
+</script>
 </body>
 </html>
