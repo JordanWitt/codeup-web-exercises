@@ -43,7 +43,7 @@ console.log(person.age);// can also use the dot notation to log just the propert
 //Adding some variable with functions
 let firstName = "Jordan";
 let lastName = " Witt";
-let fullName = function (){
+let fullName = function () {
     let fullName = firstName + lastName
     return fullName
 }
@@ -61,12 +61,67 @@ console.log(selectedColors.length);//returns how many items/elemtents in the arr
 function greet(name, lastName) {  //the parameters
     console.log('Hello ' + name + ' ' + lastName);
 }
+
 greet('Jordan', 'Witt');// arugument supplied to that parameter
 // calc funtions
-function square(number){
+function square(number) {
     return number * number;
 }
-console.log(square(2));
+
+console.log('number is ' + (square(8)));
+
+//Object Oriented principle/programming/encapsulation
+// let baeSalary = 70_000;
+// let overtime = 10;
+// let rate = 20;
+//
+// function getWage(baseSalary, overtime, rate) {
+//     return baseSalary + (overtime * rate);
+// }
+let employee = {
+    baeSalary: 70_000,
+    overtime: 10,
+    rate: 20,
+    getWage: function () {
+        return this.baeSalary + (this.overtime * this.rate);
+    }
+};
+console.log(employee.getWage());
+
+//abstraction/ inheritance/polymorphism
+// const circle = { // three members in the object
+//     radius: 1, // property 1
+//     location: { //property 2
+//         x: 1,
+//         y: 1
+//     },
+//     draw: function () { // method is a function inside of an object
+//         console.log('draw');
+//     }
+// };
+// if object has one or more methods that obj has behaviors
+
+//factories
+function createCircle(radius) {
+    return { // three members in the object
+        radius,
+        draw: function () {
+            console.log('draw');
+        }
+    }
+};
+const circle = createCircle(1);
+console.log(circle);
+
+// constructors
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function () {
+        console.log('draw');
+    };
+};
+
+
 
 
 
