@@ -49,56 +49,65 @@
         </div>
         <div class="place-container">
             <div class="timezone" id="timezone"></div>
-            <div class="country" class="country">Pana, IL</div>
+            <div class="city" class="city">Pana, IL</div>
+            <form>
+                <input type="text" id="cityName" placeholder="Enter a city name"><br>
+                <input type="submit" value="Submit" id="weather_data">
+            </form>
+            <div id="display_data"></div>
         </div>
     </div>
 </div>
+<!-----------THE CONTENTS FOR TODAY'S WEATHER AND SEARCHING CITIES--------->
 
+<!-------------------------------MAP GOES HERE?---------------------------->
+
+<!-------------THE CONTENTS FOR FUTURE FIVE-DAY FORECAST------------------->
 <div class="future-forecast">
     <div class="today" id="current-temp">
         <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
         <div class="other">
-            <div class="day">Monday</div>
-            <div class="temp">Night - 34&#176; F</div>
-            <div class="temp">Day - 53&#176; F</div>
+            <div class="day" id="day1">Monday</div>
+            <div class="temp" id="day1Min">Night - 34&#176; F</div>
+            <div class="temp" id="day1Max">Day - 53&#176; F</div>
         </div>
     </div>
     <div class="weather-forecast" id="weather-forecast">
         <div class="weather-forecast-item">
-            <div class="day">Tue</div>
+            <div class="day" id="day2">Tue</div>
             <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-            <div class="temp">Night - 34&#176; F</div>
-            <div class="temp">Day - 53&#176; F</div>
+            <div class="temp" id="day2Min">Night - 34&#176; F</div>
+            <div class="temp" id="day2Max">Day - 53&#176; F</div>
         </div>
         <div class="weather-forecast-item">
-            <div class="day">Wed</div>
+            <div class="day" id="day3">Wed</div>
             <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-            <div class="temp">Night - 34&#176; F</div>
-            <div class="temp">Day - 53&#176; F</div>
+            <div class="temp" id="day3Min">Night - 34&#176; F</div>
+            <div class="temp" id="day3Max">Day - 53&#176; F</div>
         </div>
         <div class="weather-forecast-item">
-            <div class="day">Thurs</div>
+            <div class="day" id="day4">Thurs</div>
             <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-            <div class="temp">Night - 34&#176; F</div>
-            <div class="temp">Day - 53&#176; F</div>
+            <div class="temp" id="day4Min">Night - 34&#176; F</div>
+            <div class="temp" id="day4Max">Day - 53&#176; F</div>
         </div>
         <div class="weather-forecast-item">
-            <div class="day">Fri</div>
+            <div class="day" id="day5">Fri</div>
             <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-            <div class="temp">Night - 34&#176; F</div>
-            <div class="temp">Day - 53&#176; F</div>
+            <div class="temp" id="day5Min">Night - 34&#176; F</div>
+            <div class="temp" id="day5Max">Day - 53&#176; F</div>
         </div>
         <div class="weather-forecast-item">
-            <div class="day">Sat</div>
+            <div class="day" id="day6">Sat</div>
             <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-            <div class="temp">Night - 34&#176; F</div>
-            <div class="temp">Day - 53&#176; F</div>
+            <div class="temp" id="day6Min">Night - 34&#176; F</div>
+            <div class="temp" id="day6Max">Day - 53&#176; F</div>
         </div>
         <div class="weather-forecast-item">
-            <div class="day">Sun</div>
+            <div class="day" id="day7">Sun</div>
             <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-            <div class="temp">Night - 34&#176; F</div>
-            <div class="temp">Day - 53&#176; F</div>
+            <div class="temp" id="day7Min">Night - 34&#176; F</div>
+            <div class="temp" id="day7Max">Day - 53&#176; F</div>
         </div>
 
     </div>

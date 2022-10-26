@@ -23,8 +23,20 @@ setInterval(() => {
     const minutes = time.getMinutes();
     const ampm = hour >=12 ? 'PM' : 'AM'
 
-    timeEl.innerHTML = hoursIn12rFormat + ':' + minutes + '' +  `<span id="am-pm">${ampm}</span>`
+    timeEl.innerHTML = hoursIn12rFormat + ':' + minutes + ' ' +  `<span id="am-pm">${ampm}</span>`
     dateEl.innerHTML = days[day] + ', ' + date + ' ' + months[month]
 
 }, 1000);
 
+function getWeatherData(){
+    navigator.geolocation.getCurrentPosition((success) => {
+        let {lat, lon} = success.coords;
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&exclude=hourly,minutely&appid=${openweatherKey}`).then(res => res.json()).then(data => {
+
+            console.log(data);
+            showWeatherData(data);
+        })
+    })
+}
+
+function showWeatherData

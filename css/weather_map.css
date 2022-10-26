@@ -23,6 +23,7 @@ body{
 }
 .date-container{
     font-weight: 100;
+    margin-left: -150px;
 }
 .date-container .time{
     font-size: 70px;
@@ -36,6 +37,18 @@ body{
 }
 .place-container{
     text-align: end;
+}
+form{
+    margin-top: 30px;
+}
+#cityName{
+    background: blanchedalmond;
+    width: 200px;
+}
+#weather_data{
+    background: crimson;
+    color: blanchedalmond;
+    width: 200px;
 }
 .place-container .timezone{
     font-size: 30px;
@@ -110,6 +123,9 @@ body{
     .container{
         padding: 30px;
     }
+    .date-container{
+        margin: auto;
+    }
     .future-forecast{
         justify-content: start;
         overflow: scroll;
@@ -144,3 +160,4 @@ body{
         font-size: 20px;
     }
 }
+/*MEDIA RESPONSIVENESS ^^^^^*/
