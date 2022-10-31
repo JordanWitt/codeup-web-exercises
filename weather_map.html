@@ -1,123 +1,202 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Current Weather Map</title>
-    <!--    bootstrap link-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <!--    MapboxGL link-->
-    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet'/>
-    <!--    CSS Stylesheet-->
+    <meta charset="utf-8">
+    <title>Display a map with a custom style</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <!--  MAP BOX LINKS-->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+    <!--  BOOTSTRAP LINKS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!--  FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat:wght@700&family=Chewy&family=Mansalva&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!--  CSS STYLESHEET-->
     <link rel="stylesheet" href="css/weather_map.css">
+
 </head>
-
-
 <body>
-<!--input field-->
-<div class="container">
 
-    <div class="current-info">
-        <!--        displaying the time-->
-        <div class="date-container">
-            <div class="time" id="time">
-                10:30 <span id="am-pm">AM</span>
-            </div>
-            <!--            date-->
-            <div class="date" id="date">
-                Monday Oct 26
-            </div>
-            <!--            weather-->
-            <div class="others" id="current-weather-items">
-                <div class="weather-item">
-                    <div>Humidity</div>
-                    <div>48.6%</div>
-                </div>
-                <div class="weather-item">
-                    <div>Wind Speed</div>
-                    <div>20</div>
-                </div>
-                <div class="weather-item">
-                    <div>Pressure</div>
-                    <div>Paramore</div>
-                </div>
-                <div class="weather-item">
-                    <div>Precipitation</div>
-                    <div>23.9%</div>
-                </div>
-            </div>
-        </div>
-        <div class="place-container">
-            <div class="timezone" id="timezone"></div>
-            <div class="city" class="city">Pana, IL</div>
-            <form>
-                <input type="text" id="cityName" placeholder="Enter a city name"><br>
-                <input type="submit" value="Submit" id="weather_data">
-            </form>
-            <div id="display_data"></div>
-        </div>
-    </div>
+<!-- DATA TO APPEND TO -->
+<div class="date-container">
+    <div class="location" id="location"></div>
+
+    <div clsss="date" id="date"></div>
+
 </div>
-<!-----------THE CONTENTS FOR TODAY'S WEATHER AND SEARCHING CITIES--------->
+<div class="container" style="margin: auto">
+    <div id="weather" class="row mb-2 text-center" style="margin: auto"></div>
+</div>
 
-<!-------------------------------MAP GOES HERE?---------------------------->
-
-<!-------------THE CONTENTS FOR FUTURE FIVE-DAY FORECAST------------------->
-<div class="future-forecast">
-    <div class="today" id="current-temp">
-        <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-        <div class="other">
-            <div class="day" id="day1">Monday</div>
-            <div class="temp" id="day1Min">Night - 34&#176; F</div>
-            <div class="temp" id="day1Max">Day - 53&#176; F</div>
-        </div>
-    </div>
-    <div class="weather-forecast" id="weather-forecast">
-        <div class="weather-forecast-item">
-            <div class="day" id="day2">Tue</div>
-            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-            <div class="temp" id="day2Min">Night - 34&#176; F</div>
-            <div class="temp" id="day2Max">Day - 53&#176; F</div>
-        </div>
-        <div class="weather-forecast-item">
-            <div class="day" id="day3">Wed</div>
-            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-            <div class="temp" id="day3Min">Night - 34&#176; F</div>
-            <div class="temp" id="day3Max">Day - 53&#176; F</div>
-        </div>
-        <div class="weather-forecast-item">
-            <div class="day" id="day4">Thurs</div>
-            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-            <div class="temp" id="day4Min">Night - 34&#176; F</div>
-            <div class="temp" id="day4Max">Day - 53&#176; F</div>
-        </div>
-        <div class="weather-forecast-item">
-            <div class="day" id="day5">Fri</div>
-            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-            <div class="temp" id="day5Min">Night - 34&#176; F</div>
-            <div class="temp" id="day5Max">Day - 53&#176; F</div>
-        </div>
-        <div class="weather-forecast-item">
-            <div class="day" id="day6">Sat</div>
-            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-            <div class="temp" id="day6Min">Night - 34&#176; F</div>
-            <div class="temp" id="day6Max">Day - 53&#176; F</div>
-        </div>
-        <div class="weather-forecast-item">
-            <div class="day" id="day7">Sun</div>
-            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-            <div class="temp" id="day7Min">Night - 34&#176; F</div>
-            <div class="temp" id="day7Max">Day - 53&#176; F</div>
-        </div>
-
-    </div>
+<div class="bart">
+    <img src="https://cdn.quotesgram.com/img/44/58/15325615-homer_eating_donut_with_sprinkles_wallpaper_-_1280x1024.jpg">
 </div>
 
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-<script src="jquery-3.6.0.js"></script>
+<div id='map' class="rounded card-header"></div>
+
+<!-- Load the `mapbox-gl-geocoder` plugin. -->
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+<!--MAP PLACEMENT-->
+
+<!-- JQUERY. BOOTSTRAP, GEOCODER, KEYS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src=".idea/js/mapbox-geocoder-utuils.js"></script>
 <script src="js/keys.js"></script>
-<script src="js/weather_map.js"></script>
+<script>
+
+
+
+
+
+    //SETTING TODAY'S DATE
+    let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', time: 'numeric'};
+    let today  = new Date();
+    $('#date').append(today.toLocaleDateString("en-US", options).toUpperCase())
+
+
+
+
+    // OPEN WEATHER MAP
+    let cityName
+    let countryName
+    let currentDate
+    let wind
+    let description
+    let icon
+    let currentTemp
+    let tempHigh
+    let tempLow
+    let humidity
+    let pressure
+
+    function fahrenheit(input) {
+        let output = (9 / 5) * input - 459.67
+        return output.toFixed(1)
+    }
+    $.ajax("http://api.openweathermap.org/data/2.5/forecast", {
+        type: 'GET',
+        data: {
+            APPID: openweatherKey,
+            q: "Pana, US"
+        }
+    }).done(function(data) {
+        console.log(data);
+        for(let i = 0; i < data.list.length; i++) {
+            if (data.list[i].dt_txt.split(' ')[1] === '15:00:00') {
+                cityName = data.city.name
+                countryName = data.city.country
+                currentDate = data.list[i].dt_txt
+                wind = data.list[i].wind.speed
+                description = data.list[i].weather[0].description
+                icon = data.list[i].weather[0].icon
+                currentTemp = data.list[i].main.temp
+                tempHigh = data.list[i].main.temp_max
+                tempLow = data.list[i].main.temp_min
+                humidity = data.list[i].main.humidity
+                pressure = data.list[i].main.pressure
+
+                console.log(icon);
+                let html = '';
+                html += '<div class="col-6 col-md card-header">'
+                html += '<p class="card-text" id="cityName">' +  cityName + ', ' + countryName + '</p>'
+                html += '<h5 class="card-title" id="current">' + 'Date: '  + '<br>' + currentDate.split(' ')[0] + '</h5>'
+                html += '<p class="card-text" id="temp">' + 'High: ' + fahrenheit(tempHigh) + '˚F' + '<br>' + 'Low: ' + fahrenheit(tempLow) + '˚F' + '</p>'
+                html += '<img src="http://openweathermap.org/img/w/' + icon + '.png">'
+                html += '<p class="card-text" id="description">' + description+ '</p>'
+                html += '<p class="card-text" id="humidity">' + 'Humidity: ' + humidity + '</p>'
+                html += '<p class="card-text" id="windspeed">' + 'Wind Speed: ' + wind + '</p>'
+                html += '<p class="card-text" id="pressure">' + 'Pressure: ' + pressure + '</p>'
+                html += '</div>'
+
+
+                $('#weather').append(html)
+            }
+        }
+    });
+
+    //GETTING THE OPEN WEATHER MAP DATA
+
+    mapboxgl.accessToken = token;
+
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/examples/cke97f49z5rlg19l310b7uu7j', // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        center: [-89.0801, 39.3889 ], // starting position
+        zoom: 4// starting zoom
+    });
+    const geocoder = new MapboxGeocoder({
+        // Initialize the geocoder
+        accessToken: mapboxgl.accessToken, // Set the access token
+        mapboxgl: mapboxgl, // Set the mapbox-gl instance
+        marker: true // Do not use the default marker style
+    });
+    geocoder.on('result', function(e) {
+
+        let word = e.result.place_name
+        findLoc(e.result.center, word)
+    })
+
+    map.addControl(geocoder);
+
+    //    start of click marker
+
+    marker = new mapboxgl.Marker();
+    map.on('click', addMarker)
+
+    function findLoc(coordinates){
+        $.ajax("http://api.openweathermap.org/data/2.5/forecast", {
+            type: 'GET',
+            data: {
+                APPID: openweatherKey,
+                lat:    coordinates[1],
+                lon:   coordinates[0],
+            }
+        }).done(function(data) {
+            console.log(data);
+            $('#weather').empty()
+            for(let i = 0; i < data.list.length; i++) {
+                if (data.list[i].dt_txt.split(' ')[1] === '15:00:00') {
+                    cityName = data.city.name
+                    countryName = data.city.country
+                    currentDate = data.list[i].dt_txt
+                    wind = data.list[i].wind.speed
+                    description = data.list[i].weather[0].description
+                    icon = data.list[i].weather[0].icon
+                    currentTemp = data.list[i].main.temp
+                    tempHigh = data.list[i].main.temp_max
+                    tempLow = data.list[i].main.temp_min
+                    humidity = data.list[i].main.humidity
+                    pressure = data.list[i].main.pressure
+
+                    console.log(icon);
+                    let html = '';
+                    html += '<div class="col-6 col-md card-header">'
+                    html += '<p class="card-text" id="cityName">' +  cityName + ', ' + countryName + '</p>'
+                    html += '<h5 class="card-title" id="current">' + 'Date: ' + currentDate.split(' ')[0] + '</h5>'
+                    html += '<p class="card-text">' + 'High: ' + fahrenheit(tempHigh) + '˚F' + '<br>' + 'Low: ' + fahrenheit(tempLow) + '˚F' + '</p>'
+                    html += '<img src="http://openweathermap.org/img/w/' + icon + '.png">'
+                    html += '<p class="card-text">' + description+ '</p>'
+                    html += '<p class="card-text">' + 'Humidity: ' + humidity + '</p>'
+                    html += '<p class="card-text">' + 'Wind Speed: ' + wind + '</p>'
+                    html += '<p class="card-text">' + 'Pressure: ' + pressure + '</p>'
+                    html += '</div>'
+
+
+                    $('#weather').append(html)
+                }
+            }
+        })
+    }
+
+
+
+</script>
 </body>
 </html>

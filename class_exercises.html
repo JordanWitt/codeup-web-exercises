@@ -1,23 +1,261 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
-    <title>Title</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body {
+            background-color: lightpink;
+            font-family: "Press Start 2P";
+        }
+        #data {
+            background-color: coral;
+
+        }
+        #location {
+            margin: auto;
+            text-align: center;
+        }
+        .card-header{
+
+            padding: 20px;
+            justify-content: space-between;
+        }
+    </style>
 </head>
 <body>
+<div class="card">
+<div id="location"></div>
+</div>
+<br>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur culpa cupiditate hic inventore odio quidem quod! Ad autem blanditiis dicta dignissimos excepturi illum nemo, officia quaerat quo reprehenderit, veniam.</p>
+<div class="container" style="margin: auto">
+    <div id="data" class="row" style="margin: auto"></div>
+</div>
+
+<form style="    margin-left: 25%;
+    margin-right:25%;
+    width: 50%;">
+    Search Address<input id="searchbar" type="text" name="searchbar">
+    <button type="button" id="search">Search</button>
+</form>
+<div id='map' class="rounded" style='width: 80vw; height: 40em; margin: auto; margin-top: 3em'></div>
 
 
-<!-- BOOTSTRAP -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+<br>
+<br>
 
-<!-- JQUERY IMPORT HERE:-->
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
-<!-- MY JAVASCRIPT FILE-->
-<script src="js/class_exercises.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/keys.js"></script>
+<script>
+
+
+
+    function fahrenheit(input) {
+        let output = (9 / 5) * input - 459.67
+        return output.toFixed(1)
+    }
+    <!--Formula for Fahrenheit-->
+    let locale = []
+    let superArr = []
+    let count = 5;
+    $.ajax({
+        url: "http://api.openweathermap.org/data/2.5/forecast",
+        type: "GET",
+        data: {
+            APPID: openweatherKey,
+            q:     "Pana, US"
+        }
+    }).done(function(data) {
+        console.log(data)
+        $('#location').empty()
+        let para = "";
+        para += '<h3>' + data.city.name + ", " + data.city.country + '</h3>';
+        $('#location').append(para)
+        $('#data').empty()
+        data.list.forEach(x => {
+            if (x.dt_txt.split(' ')[1] === '15:00:00') {
+
+
+                if (count === 0) {
+
+                }
+                else {
+
+
+                    let html = "";
+                    html +=  '<div class="col card-header"><p class="mb-4 card-header">' + x.dt_txt.split(' ')[0] + "</p>";
+                    html += '<p class="mb-2">' + fahrenheit(x.main.temp_min) + '˚F' + ' / ' + fahrenheit(x.main.temp_max) + '˚F' + '</p>';
+                    html += '<img src="http://openweathermap.org/img/w/' + x.weather[0].icon + '.png">'
+                    html += '<p class="mb-2">' + 'Desciption: ' + "<strong>" + x.weather[0].description + "</strong>" + '</p>';
+                    html += '<p class="mb-2">' + 'Humdidity: ' + x.main.humidity + '</p>';
+                    html += '<p class="mb-2"> '+ 'Wind: ' + x.wind.speed + '</p>';
+                    html += '<p>' + 'Pressure: ' + x.main.pressure + '</p>'
+                    html += '</div>';
+                    // html += '<h3>' + data.city.name + '</h3>'
+
+                    $('#data').append(html)
+                    count--
+                }
+
+            }
+        })
+
+    });
+
+    mapboxgl.accessToken = mapboxKey;
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/satellite-streets-v11',
+        zoom: 10,
+        center: [-89.07630, 39.38780]
+
+    });
+
+    //    start of click marker
+
+    this.marker = new mapboxgl.Marker();
+    this.map.on('click', this.addMarker.bind(this),
+    );
+
+    //start on text input
+    function findLoc() {
+        let input = document.getElementById('searchbar').value;
+        geocode(input, mapboxKey).then(function(coordinates) {
+            if (coordinates) {
+                var marker = new mapboxgl.Marker()
+                    .setLngLat(coordinates)
+
+                    .addTo(map)
+
+            }
+
+
+
+            map.flyTo({center: coordinates});
+
+
+
+            let superArr = []
+            let count = 5;
+            $.ajax({
+                url: "http://api.openweathermap.org/data/2.5/forecast",
+                type: "GET",
+                data: {
+                    APPID: OPEN_WEATHER_APPID,
+                    lat:    coordinates[1],
+                    lon:   coordinates[0],
+                }
+            }).done(function(data) {
+
+                $('#location').empty()
+                let para = "";
+                para += '<h3>' + data.city.name + ", " + data.city.country + '</h3>';
+                $('#location').append(para)
+                $('#data').empty()
+
+                data.list.forEach(x => {
+                    if (x.dt_txt.split(' ')[1] === '00:00:00') {
+                        if (count === 0) {
+
+                        } else {
+
+
+                            let html = "";
+
+                            html += '<div class="col card-header"><p class="mb-4 card-header">' + x.dt_txt.split(' ')[0] + "</p>";
+                            html += '<p class="mb-2">' + fahrenheit(x.main.temp_min) + '˚F' + ' / ' + fahrenheit(x.main.temp_max) + '˚F' + '</p>';
+                            html += '<img src="http://openweathermap.org/img/w/' + x.weather[0].icon + '.png">'
+                            html += '<p class="mb-2">' + 'Desciption: ' + "<strong>" + x.weather[0].description + "</strong>" + '</p>';
+                            html += '<p class="mb-2">' + 'Humdidity: ' + x.main.humidity + '</p>';
+                            html += '<p class="mb-2"> ' + 'Wind: ' + x.wind.speed + '</p>';
+                            html += '<p>' + 'Pressure: ' + x.main.pressure + '</p>'
+                            html += '</div>';
+
+                            $('#data').append(html)
+                            count--
+                        }
+                    }
+                })
+            });
+
+        })
+    }
+
+    let searchBar = document.getElementById('search');
+    searchBar.addEventListener('click', findLoc)
+
+
+    //end of text input adding the function addmarker
+
+
+    function addMarker(event) {
+
+        var input = event.lngLat;
+
+        this.marker.setLngLat(input).addTo(this.map);
+
+
+
+        let superArr = []
+        let count = 5;
+        $.ajax({
+            url: "http://api.openweathermap.org/data/2.5/forecast",
+            type: "GET",
+            data: {
+                APPID: openweatherKey,
+                lat:    input.lat,
+                lon:   input.lng,
+            }
+        }).done(function(data) {
+            $('#location').empty()
+            let para = "";
+            para += '<h3>' + data.city.name + ", " + data.city.country + '</h3>';
+            $('#location').append(para)
+            $('#data').empty()
+            data.list.forEach(x => {
+                if (x.dt_txt.split(' ')[1] === '00:00:00') {
+                    if (count === 0) {
+
+                    } else {
+
+
+                        let html = "";
+
+                        html += '<div class="col card-header"><p class="mb-4 card-header">' + x.dt_txt.split(' ')[0] + "</p>";
+                        html += '<p class="mb-2">' + fahrenheit(x.main.temp_min) + '˚F' + ' / ' + fahrenheit(x.main.temp_max) + '˚F' + '</p>';
+                        html += '<img src="http://openweathermap.org/img/w/' + x.weather[0].icon + '.png">'
+                        html += '<p class="mb-2">' + 'Desciption: ' + "<strong>" + x.weather[0].description + "</strong>" + '</p>';
+                        html += '<p class="mb-2">' + 'Humdidity: ' + x.main.humidity + '</p>';
+                        html += '<p class="mb-2"> ' + 'Wind: ' + x.wind.speed + '</p>';
+                        html += '<p>' + 'Pressure: ' + x.main.pressure + '</p>'
+                        html += '</div>';
+
+                        $('#data').append(html)
+                        count--
+                    }
+                }
+            })
+        });
+
+
+    }
+
+
+</script>
 </body>
 </html>
