@@ -87,9 +87,27 @@ let list = '<ul>';
 // TODO: rewrite the following loop to use a for..of loop
 
 for( let developer of developers){
-  console.log(developers[3]);
+  console.log(developer);
 }
   // TODO: rewrite the assignment below to use template strings
 for( let list of developers) {
-  console.log(list);
+  console.log(list)
 }
+
+//ANOTHER EXAMPLE FOR TOTALING SALES
+const salesPeople = [
+  {name: 'Jim Halpert', sales: 100},
+  {name: 'Dwight Schrute', sales: 50},
+  {name: 'Andy Bernard', sales: 150},
+];
+
+const totalSales = salesPeople.reduce((total, person) => {
+  return total + person.sales;
+}, 0);
+console.log(totalSales);
+//END OF EXAMPLE 
+
+//Bonus
+const unique = [...new Set(users.map(it => it.group))]
+console.log(unique);
+
