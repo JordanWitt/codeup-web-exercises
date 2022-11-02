@@ -1,0 +1,28 @@
+body{
+   background: #d6daae;
+}
+h1{
+   position: absolute;
+   top: 35%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-family: 'DM Serif Display', serif ;
+   font-size: 120px;
+   text-align: center;
+   font-weight: bold;
+   color: #ffe57b;
+   z-index: 1;
+}
+.nav{
+   margin: 50px auto;
+   font-family: 'Helvetica';
+}
+.nav-link{
+   color: #4b5e2f;
+}
+.portrait{
+   position: relative;
+   display: block;
+   margin: 100px 650px 300px 200px;
+   height: 500px;
+}
