@@ -1,18 +1,7 @@
 body{
    background: #d6daae;
 }
-h1{
-   position: absolute;
-   top: 35%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   font-family: 'DM Serif Display', serif ;
-   font-size: 120px;
-   text-align: center;
-   font-weight: bold;
-   color: #ffe57b;
-   z-index: 1;
-}
+/*CSS FOR MD SCREEN AND LARGER*/
 .nav{
    margin: 50px auto;
    font-family: 'Helvetica';
@@ -20,9 +9,32 @@ h1{
 .nav-link{
    color: #4b5e2f;
 }
+h1{
+   position: absolute;
+   width: 100%;
+   top: 30%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-family: 'DM Serif Display', serif ;
+   font-size: 200px;
+   text-align: center;
+   font-weight: bold;
+   color: #fff0a6;
+   z-index: 1;
+}
 .portrait{
    position: relative;
-   display: block;
-   margin: 100px 650px 300px 200px;
-   height: 500px;
+   top: 100%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   height: 0px;
 }
+
+.skills{
+   position: absolute;
+   top: 400px;
+   left: 306px;
+   z-index: 2;
+   color: #323d20;;
+}
+
